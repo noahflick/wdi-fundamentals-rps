@@ -53,3 +53,9 @@ function playToFive() {
     return [playerWins, computerWins];
 }
 
+getInput()
+
+
+
+
+
