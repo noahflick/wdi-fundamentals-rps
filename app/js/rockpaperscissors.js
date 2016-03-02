@@ -59,8 +59,7 @@ function getWinner(playerMove,computerMove) {
             winner = "It's a tie";
         }
     } else {
-        console.log("player move must be either rock, paper or scissors, please try again");
-        winner = "neither";
+        winner = "neither. player move must be either rock, paper or scissors, please try again";
     }
     console.log("Player chose " + playerMove);
     console.log("Computer chose " + computerMove);
@@ -69,12 +68,12 @@ function getWinner(playerMove,computerMove) {
     
 }
 
-function playToFive() {
-    console.log('Let\'s play Rock Paper Scissors');
+function playToX(x) {
+    console.log("Let\'s play Rock Paper Scissors. First to " + x + " wins is the champion!");
   var playerWins = 0;
   var computerWins = 0;
   var roundCount = 1;
-  while(playerWins < 5 && computerWins < 5){
+  while(playerWins < x && computerWins < x){
       var playerMove = getPlayerMove();
       var computerMove = getComputerMove();
       var winner = getWinner(playerMove, computerMove);
@@ -83,26 +82,21 @@ function playToFive() {
         } else if (winner == "Computer") {
             computerWins ++;
         }
-
-    console.log('The score for round ' + roundCount + " is " + playerWins + ' to ' + computerWins + '\n'); 
-    
+    console.log('The score for round ' + roundCount + " is Player: " + playerWins + ' to ' + " Computer: " + computerWins + '\n'); 
     roundCount ++;
   
-  } 
-  
-    if (playerWins == 5){
+  }  
+    if (playerWins == x){
       console.log("Player is the champion!");
   } else {
-      console.log("Computer is the champion!");
-      
+      console.log("Computer is the champion!");  
   }
+  
   console.log("This match lasted " + (roundCount - 1) + " rounds." );
-  return [playerWins, computerWins];
-    
+  return [playerWins, computerWins];  
   }
 
-playToFive();
-
+playToX(prompt("How many points do you want to play to? (Must be a positive number)"));
 
 
 
